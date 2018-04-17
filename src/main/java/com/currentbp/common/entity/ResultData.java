@@ -107,4 +107,28 @@ public class ResultData {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
+
+    public static ResultData successed() {
+        return new ResultData();
+    }
+
+    public static ResultData successed(Object data) {
+        ResultData resultData = new ResultData();
+        resultData.setBody(data);
+        return resultData;
+    }
+
+    public static ResultData successed(String mesg, Object data) {
+        ResultData resultData = new ResultData();
+        resultData.setErrorMessage(mesg);
+        resultData.setBody(data);
+        return resultData;
+    }
+
+    public static ResultData failed(String mesg) {
+        ResultData resultData = new ResultData();
+        resultData.setErrorMessage(mesg);
+        resultData.setStatus(STATUS_ERROR);
+        return resultData;
+    }
 }
