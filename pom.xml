@@ -18,7 +18,7 @@
 
     <profiles>
         <profile>
-            <id>development</id>
+            <id>gsDev</id>
             <activation>
                 <jdk>1.8</jdk>
                 <activeByDefault>true</activeByDefault>
