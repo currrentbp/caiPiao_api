@@ -1,6 +1,6 @@
 package com.currentbp.api.daletou.facade;
 
-import com.currentbp.entity.DaletouEntity;
+import com.currentbp.daletou.bo.entity.DaletouBo;
 
 import java.util.List;
 
@@ -20,5 +20,5 @@ public interface ForecastDaletouServiceFacade {
      * @param daletouId 大乐透ID
      * @return 大乐透列表
      */
-    List<DaletouEntity> forecastDaletou(int count, int daletouId);
+    List<DaletouBo> forecastDaletou(int count, int daletouId);
 }

@@ -1,4 +1,4 @@
-package com.currentbp.entity;
+package com.currentbp.daletou.bo.entity;
 
 
 import java.util.ArrayList;

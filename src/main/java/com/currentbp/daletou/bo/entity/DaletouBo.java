@@ -1,4 +1,4 @@
-package com.currentbp.entity;
+package com.currentbp.daletou.bo.entity;
 
 import com.currentbp.util.all.StringUtil;
 
@@ -13,15 +13,15 @@ import java.util.List;
  * @author current_bp
  * @createTime 20170503
  */
-public class DaletouEntity {
+public class DaletouBo {
     private Integer id;
     private List<Integer> red = new ArrayList<Integer>(5);
     private List<Integer> blue = new ArrayList<Integer>(2);
 
-    public DaletouEntity() {
+    public DaletouBo() {
     }
 
-    public DaletouEntity(Integer id, List<String> daletouStrings) {
+    public DaletouBo(Integer id, List<String> daletouStrings) {
         this.id = id;
         for (int i = 0; i < daletouStrings.size(); i++) {
             if (i < 5) {
@@ -32,7 +32,7 @@ public class DaletouEntity {
         }
     }
 
-    public DaletouEntity(String source) {
+    public DaletouBo(String source) {
         //17059:8,11,13,15,17;3,10
         List<String> strings = StringUtil.stringToList(source, ":");
         this.id = Integer.parseInt(strings.get(0));
@@ -50,7 +50,7 @@ public class DaletouEntity {
         }
     }
 
-    public DaletouEntity sort() {
+    public DaletouBo sort() {
         Collections.sort(this.getBlue(), new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
@@ -101,7 +101,7 @@ public class DaletouEntity {
             return false;
         }
 
-        DaletouEntity that = (DaletouEntity) o;
+        DaletouBo that = (DaletouBo) o;
 
         return id != null ? id.equals(that.id) : that.id == null;
 
