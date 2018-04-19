@@ -1,5 +1,6 @@
 package com.currentbp.daletou.bo.entity;
 
+import com.currentbp.daletou.entity.Daletou;
 import com.currentbp.util.all.StringUtil;
 
 import java.util.ArrayList;
@@ -19,6 +20,17 @@ public class DaletouBo {
     private List<Integer> blue = new ArrayList<Integer>(2);
 
     public DaletouBo() {
+    }
+    public DaletouBo(Daletou daletou) {
+        this.id=daletou.getId();
+        red.add(daletou.getRed1());
+        red.add(daletou.getRed2());
+        red.add(daletou.getRed3());
+        red.add(daletou.getRed4());
+        red.add(daletou.getRed5());
+
+        blue.add(daletou.getBlue1());
+        blue.add(daletou.getBlue2());
     }
 
     public DaletouBo(Integer id, List<String> daletouStrings) {
@@ -105,6 +117,19 @@ public class DaletouBo {
 
         return id != null ? id.equals(that.id) : that.id == null;
 
+    }
+
+    public Daletou toDaletou(){
+        Daletou daletou = new Daletou();
+        daletou.setId(this.id);
+        daletou.setRed1(this.red.get(0));
+        daletou.setRed2(this.red.get(1));
+        daletou.setRed3(this.red.get(2));
+        daletou.setRed4(this.red.get(3));
+        daletou.setRed5(this.red.get(4));
+        daletou.setBlue1(this.blue.get(0));
+        daletou.setBlue2(this.blue.get(1));
+        return daletou;
     }
 
     @Override
