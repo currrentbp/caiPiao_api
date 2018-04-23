@@ -22,7 +22,7 @@ public class DaletouBo {
     public DaletouBo() {
     }
     public DaletouBo(Daletou daletou) {
-        this.id=daletou.getId();
+        this.id=null != daletou.getId() ? daletou.getId() : null;
         red.add(daletou.getRed1());
         red.add(daletou.getRed2());
         red.add(daletou.getRed3());
