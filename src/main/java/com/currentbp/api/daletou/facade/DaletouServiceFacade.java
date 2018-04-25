@@ -33,4 +33,13 @@ public interface DaletouServiceFacade {
      * @return 中奖情况
      */
     List<Win> isWin(List<Daletou> daletous);
+
+    /**
+     * 预测大乐透
+     *
+     * @param num       需要的数量
+     * @param daletouId 大乐透ID
+     * @return 大乐透列表
+     */
+    List<Daletou> forecast(int num, int daletouId);
 }
