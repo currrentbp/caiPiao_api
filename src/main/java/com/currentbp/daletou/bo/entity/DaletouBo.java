@@ -2,6 +2,7 @@ package com.currentbp.daletou.bo.entity;
 
 import com.currentbp.daletou.entity.Daletou;
 import com.currentbp.util.all.StringUtil;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +22,9 @@ public class DaletouBo {
 
     public DaletouBo() {
     }
+
     public DaletouBo(Daletou daletou) {
-        this.id=null != daletou.getId() ? daletou.getId() : null;
+        this.id = null != daletou.getId() ? daletou.getId() : null;
         red.add(daletou.getRed1());
         red.add(daletou.getRed2());
         red.add(daletou.getRed3());
@@ -59,6 +61,22 @@ public class DaletouBo {
         }
         for (String blue : blues1) {
             this.blue.add(Integer.parseInt(blue));
+        }
+    }
+
+    public DaletouBo(Integer id, String source) {
+        //8,11,13,15,17;3,10
+        this.id = id;
+        List<String> strings = StringUtil.stringToList(source, ";");
+        String reds = strings.get(0);
+        String blues = strings.get(1);
+        List<String> red = StringUtil.stringToList(reds, ",");
+        List<String> blue = StringUtil.stringToList(",");
+        for (String r : red) {
+            this.red.add(Integer.parseInt(r));
+        }
+        for (String b : blue) {
+            this.blue.add(Integer.parseInt(b));
         }
     }
 
@@ -119,7 +137,7 @@ public class DaletouBo {
 
     }
 
-    public Daletou toDaletou(){
+    public Daletou toDaletou() {
         Daletou daletou = new Daletou();
         daletou.setId(this.id);
         daletou.setRed1(this.red.get(0));
