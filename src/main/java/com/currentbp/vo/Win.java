@@ -13,13 +13,38 @@ import java.util.List;
  */
 public class Win implements Serializable {
     private static final long serialVersionUID = 7947868980945206606L;
+    /**
+     * 是否中奖
+     */
     boolean isWin;
+    /**
+     * 红球中奖数量
+     */
     int redWin;
+    /**
+     * 蓝球中奖数量
+     */
     int blueWin;
+    /**
+     * 中奖的红球
+     */
     List<Integer> reds;
+    /**
+     * 中奖的蓝球
+     */
     List<Integer> blues;
+    /**
+     * 中奖号码
+     */
     Daletou source;
+    /**
+     * 中奖消息
+     */
     String msg;
+    /**
+     * 中奖类型
+     */
+    int winType;
 
     public boolean isWin() {
         return isWin;
@@ -75,5 +100,27 @@ public class Win implements Serializable {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public int getWinType() {
+        return winType;
+    }
+
+    public void setWinType(int winType) {
+        this.winType = winType;
+    }
+
+    @Override
+    public String toString() {
+        return "Win{" +
+                "isWin=" + isWin +
+                ", redWin=" + redWin +
+                ", blueWin=" + blueWin +
+                ", reds=" + reds +
+                ", blues=" + blues +
+                ", source=" + source +
+                ", msg='" + msg + '\'' +
+                ", winType=" + winType +
+                '}';
     }
 }

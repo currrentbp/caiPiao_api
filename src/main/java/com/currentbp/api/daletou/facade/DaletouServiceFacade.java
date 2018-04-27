@@ -42,4 +42,10 @@ public interface DaletouServiceFacade {
      * @return 大乐透列表
      */
     List<Daletou> forecast(int num, int daletouId);
+
+    /**
+     * 预测并保存到数据库
+     * @param daletouId 最新大乐透ID
+     */
+    void forecastAndSave(int daletouId);
 }

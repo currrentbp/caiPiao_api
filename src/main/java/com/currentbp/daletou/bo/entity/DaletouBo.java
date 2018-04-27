@@ -1,5 +1,6 @@
 package com.currentbp.daletou.bo.entity;
 
+import com.alibaba.fastjson.JSON;
 import com.currentbp.daletou.entity.Daletou;
 import com.currentbp.util.all.StringUtil;
 import org.springframework.util.StringUtils;
@@ -71,7 +72,7 @@ public class DaletouBo {
         String reds = strings.get(0);
         String blues = strings.get(1);
         List<String> red = StringUtil.stringToList(reds, ",");
-        List<String> blue = StringUtil.stringToList(",");
+        List<String> blue = StringUtil.stringToList(blues, ",");
         for (String r : red) {
             this.red.add(Integer.parseInt(r));
         }
@@ -147,6 +148,7 @@ public class DaletouBo {
         daletou.setRed5(this.red.get(4));
         daletou.setBlue1(this.blue.get(0));
         daletou.setBlue2(this.blue.get(1));
+
         return daletou;
     }
 
