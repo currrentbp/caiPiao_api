@@ -1,5 +1,6 @@
 package com.currentbp.vo;
 
+import com.currentbp.constant.WinType;
 import com.currentbp.daletou.entity.Daletou;
 
 import java.io.Serializable;
@@ -16,35 +17,41 @@ public class Win implements Serializable {
     /**
      * 是否中奖
      */
-    boolean isWin;
+    private boolean isWin;
     /**
      * 红球中奖数量
      */
-    int redWin;
+    private int redWin;
     /**
      * 蓝球中奖数量
      */
-    int blueWin;
+    private int blueWin;
     /**
      * 中奖的红球
      */
-    List<Integer> reds;
+    private List<Integer> reds;
     /**
      * 中奖的蓝球
      */
-    List<Integer> blues;
+    private List<Integer> blues;
     /**
      * 中奖号码
      */
-    Daletou source;
+    private Daletou source;
     /**
      * 中奖消息
      */
-    String msg;
+    private String msg;
     /**
      * 中奖类型
      */
-    int winType;
+    private int winType;
+
+    /**
+     * 基本奖金
+     */
+    private Integer baseMoney;
+
 
     public boolean isWin() {
         return isWin;
@@ -110,6 +117,14 @@ public class Win implements Serializable {
         this.winType = winType;
     }
 
+    public Integer getBaseMoney() {
+        return WinType.DaletouBaseMoney.getValueByType(winType);
+    }
+
+    public void setBaseMoney(Integer baseMoney) {
+        this.baseMoney = baseMoney;
+    }
+
     @Override
     public String toString() {
         return "Win{" +
@@ -121,6 +136,7 @@ public class Win implements Serializable {
                 ", source=" + source +
                 ", msg='" + msg + '\'' +
                 ", winType=" + winType +
+                ", baseMoney=" + baseMoney +
                 '}';
     }
 }

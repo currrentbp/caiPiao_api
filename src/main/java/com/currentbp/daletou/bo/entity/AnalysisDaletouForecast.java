@@ -18,10 +18,12 @@ public class AnalysisDaletouForecast implements Serializable {
     Long sum;//总中奖金额
     Integer personCount;//总中奖人次
     Integer forecastCount;//总预测数量
+    Integer consumeMoney;//消耗的钱
     List<Integer> winCount;
+
     {
-        this.winCount= new ArrayList<>(6);
-        for(int i=0;i<6;i++){
+        this.winCount = new ArrayList<>(6);
+        for (int i = 0; i < 6; i++) {
             this.winCount.add(0);
         }
     }
@@ -74,6 +76,14 @@ public class AnalysisDaletouForecast implements Serializable {
         this.winCount = winCount;
     }
 
+    public Integer getConsumeMoney() {
+        return null != consumeMoney ? consumeMoney : forecastCount * 2;
+    }
+
+    public void setConsumeMoney(Integer consumeMoney) {
+        this.consumeMoney = consumeMoney;
+    }
+
     @Override
     public String toString() {
         return "AnalysisDaletouForecast{" +
@@ -82,6 +92,7 @@ public class AnalysisDaletouForecast implements Serializable {
                 ", sum=" + sum +
                 ", personCount=" + personCount +
                 ", forecastCount=" + forecastCount +
+                ", consumeMoney=" + getConsumeMoney() +
                 ", winCount=" + winCount +
                 '}';
     }
