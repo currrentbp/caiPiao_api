@@ -1,6 +1,6 @@
 package com.currentbp.api.daletou.facade;
 
-import com.currentbp.daletou.condition.DaletouCondition;
+import com.currentbp.daletou.condition.DaletouPageCondition;
 import com.currentbp.daletou.entity.Daletou;
 import com.currentbp.vo.Win;
 
@@ -21,10 +21,10 @@ public interface DaletouServiceFacade {
     /**
      * 根据条件查询大乐透
      *
-     * @param daletouCondition 条件
+     * @param daletouPageCondition 条件
      * @return 大乐透列表
      */
-    List<Daletou> queryDaletouByCondition(DaletouCondition daletouCondition);
+    List<Daletou> queryDaletouByCondition(DaletouPageCondition daletouPageCondition);
 
     /**
      * 检查中奖情况
@@ -41,11 +41,15 @@ public interface DaletouServiceFacade {
      * @param daletouId 大乐透ID
      * @return 大乐透列表
      */
-    List<Daletou> forecast(int num, int daletouId);
+    List<Daletou> forecastV1(int num, int daletouId);
 
     /**
-     * 预测并保存到数据库
-     * @param daletouId 最新大乐透ID
+     * 预测大乐透：第二种策略
+     *
+     * @param num       需要的数量
+     * @param daletous 客户提供的大乐透列表
+     * @return 大乐透列表
      */
-    void forecastAndSave(int daletouId);
+    List<Daletou> forecastV2(int num, List<Daletou> daletous);
+
 }
