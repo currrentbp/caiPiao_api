@@ -10,14 +10,14 @@ import java.util.List;
  * @author current_bp
  * @createTime 20180128
  */
-public class HistoryDate {
+public class HistoryRepeatDate {
     //当前的ID
     private Integer id;
     //包括当前的大乐透总的N期数据
     private List<Integer> reds = new ArrayList<Integer>();
     private List<Integer> blues = new ArrayList<Integer>();
 
-    public HistoryDate() {
+    public HistoryRepeatDate() {
     }
 
     public void addReds(List<Integer> reds) {
