@@ -50,6 +50,6 @@ public interface DaletouServiceFacade {
      * @param daletous 客户提供的大乐透列表
      * @return 大乐透列表
      */
-    List<Daletou> forecastV2(int num, List<Daletou> daletous);
+    List<Daletou> forecastV2(int num, List<Daletou> daletous,Integer daletouId);
 
 }
