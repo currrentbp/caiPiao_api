@@ -14,6 +14,7 @@ public class UserDaletou implements Serializable {
     private String daletou;
     private Date createTime;
     private Date updateTime;
+    private Integer win;
 
     public Long getId() {
         return id;
@@ -71,6 +72,14 @@ public class UserDaletou implements Serializable {
         this.updateTime = updateTime;
     }
 
+    public Integer getWin() {
+        return win;
+    }
+
+    public void setWin(Integer win) {
+        this.win = win;
+    }
+
     @Override
     public String toString() {
         return "UserDaletou{" +
@@ -81,6 +90,7 @@ public class UserDaletou implements Serializable {
                 ", daletou='" + daletou + '\'' +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", win=" + win +
                 '}';
     }
 }
