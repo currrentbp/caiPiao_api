@@ -3,12 +3,10 @@ package com.currentbp.daletou.bo.entity;
 import com.alibaba.fastjson.JSON;
 import com.currentbp.daletou.entity.Daletou;
 import com.currentbp.util.all.StringUtil;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * 大乐透号码
@@ -133,9 +131,29 @@ public class DaletouBo {
         }
 
         DaletouBo that = (DaletouBo) o;
-
         return id != null ? id.equals(that.id) : that.id == null;
+    }
 
+    public int diffNum(DaletouBo that) {
+        int num = 0;
+        if (CollectionUtils.isEmpty(this.red) || CollectionUtils.isEmpty(this.blue)
+                || CollectionUtils.isEmpty(that.red) || CollectionUtils.isEmpty(that.blue)) {
+            return -1;
+        }
+        Set<Integer> redSet = new HashSet<>(this.red);
+        Set<Integer> blueSet = new HashSet<>(this.blue);
+
+        for (Integer r : that.red) {
+            if (!redSet.contains(r)) {
+                num++;
+            }
+        }
+        for (Integer b : that.blue) {
+            if(!blueSet.contains(b)){
+                num++;
+            }
+        }
+        return num;
     }
 
     public Daletou toDaletou() {
