@@ -1,6 +1,7 @@
 package com.currentbp.daletou.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author current_bp
@@ -39,6 +40,17 @@ public class Daletou implements Serializable {
         this.red5 = red5;
         this.blue1 = blue1;
         this.blue2 = blue2;
+    }
+
+    public Daletou(Integer id, List<Integer> reds,List<Integer> blues){
+        this.id = id;
+        this.red1 = reds.get(0);
+        this.red2 = reds.get(1);
+        this.red3 = reds.get(2);
+        this.red4 = reds.get(3);
+        this.red5 = reds.get(4);
+        this.blue1 = blues.get(0);
+        this.blue2 = blues.get(1);
     }
 
     public Integer getId() {
