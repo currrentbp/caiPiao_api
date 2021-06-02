@@ -53,6 +53,17 @@ public class Daletou implements Serializable {
         this.blue2 = blues.get(1);
     }
 
+    public Daletou(Integer id, int[] reds,int[] blues){
+        this.id = id;
+        this.red1 = reds[0];
+        this.red2 = reds[1];
+        this.red3 = reds[2];
+        this.red4 = reds[3];
+        this.red5 = reds[4];
+        this.blue1 = blues[0];
+        this.blue2 = blues[1];
+    }
+
     public Integer getId() {
         return id;
     }
