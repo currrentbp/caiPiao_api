@@ -52,4 +52,12 @@ public interface DaletouServiceFacade {
      */
     List<Daletou> forecastV2(int num, List<Daletou> daletous,Integer daletouId);
 
+    /**
+     * 预测大乐透：第三种策略
+     * @param num
+     * @param daletouId
+     * @return
+     */
+    List<Daletou> forecastV3(int num,Integer daletouId);
+
 }
