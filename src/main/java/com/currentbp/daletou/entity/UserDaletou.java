@@ -15,6 +15,7 @@ public class UserDaletou implements Serializable {
     private Date createTime;
     private Date updateTime;
     private Integer win;
+    private Integer winType;
 
     public Long getId() {
         return id;
@@ -80,6 +81,14 @@ public class UserDaletou implements Serializable {
         this.win = win;
     }
 
+    public Integer getWinType() {
+        return winType;
+    }
+
+    public void setWinType(Integer winType) {
+        this.winType = winType;
+    }
+
     @Override
     public String toString() {
         return "UserDaletou{" +
@@ -91,6 +100,7 @@ public class UserDaletou implements Serializable {
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
                 ", win=" + win +
+                ", winType=" + winType +
                 '}';
     }
 }
