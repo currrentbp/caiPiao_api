@@ -149,11 +149,15 @@ public class DaletouBo {
             }
         }
         for (Integer b : that.blue) {
-            if(!blueSet.contains(b)){
+            if (!blueSet.contains(b)) {
                 num++;
             }
         }
         return num;
+    }
+
+    public int sameNum(DaletouBo that) {
+        return 7 - diffNum(that);
     }
 
     public Daletou toDaletou() {
